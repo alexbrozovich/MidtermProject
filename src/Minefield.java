@@ -19,7 +19,7 @@ public class Minefield {
 		int[] bombPlacementListY = new int[numberOfBombs];
 		// 2. Fill with blank cell objects
 		for (int i = 0; i < x; i++) {
-			for (int j = 0; i < y; j++ ) {
+			for (int j = 0; j < y; j++ ) {
 				grid[i][j] = new Cell();
 			}
 		}
@@ -30,10 +30,9 @@ public class Minefield {
 		// b. Choose random coordinates x,y
 		// b. Add x to x array and y to y array
 		for(int i = 0; i < numberOfBombs; i++) {
-			bombPlacementListX[i] = (rand.nextInt(x) + 1);
-			bombPlacementListY[i] = (rand.nextInt(y) + 1);
+			bombPlacementListX[i] = (rand.nextInt(x));
+			bombPlacementListY[i] = (rand.nextInt(y));
 		}
-
 		// c. For loop to get each bomb coordinate and call grid[xarray[i]][yarray[i]].setBomb(true);
 		for(int i = 0; i < numberOfBombs; i++) {
 			grid[bombPlacementListX[i]][bombPlacementListY[i]].setBomb(true);
