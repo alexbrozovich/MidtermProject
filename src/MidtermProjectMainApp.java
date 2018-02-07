@@ -10,17 +10,23 @@ public class MidtermProjectMainApp {
 		
 		System.out.println("Welcome to minefield\n");
 		
-		System.out.println("What is your name?: ");
-		String name = scan.next();
-		System.out.println("What is your skill?: ");
-		String skill = scan.next();
+		String name = Validator.getString(scan, "What is your name?\n");
+		
+		String skill = Validator.getString(scan, "What is your skill? Enter: Beginner, Average Joe, or Expert\n");
+		
 		Player p1 = new Player(name,skill);
+		System.out.println("Hey " + p1.getName() + ". Welcome to the game!\n");
+		System.out.println("You say your skill level is " + p1.getSkill() + ". We'll see about that.....");
 		
-		System.out.println("Hey " + name + ". Welcome to minefield)");
 		
+		int size = Validator.getInt(scan, "First things first, please enter the size of board you would like to play: (Example if you enter 3, your board will be 3x3)\n",3,10);
+		System.out.println("Your board is " + size + " x " + size + ".\n");
+		System.out.println("Lets play!\n");
 		
-		int size = Validator.getInt(scan, "First things first, please enter the size of board you would like to play");
-		System.out.println("Your board is " + size + " x " + size + ".");
+		Minefield board = new Minefield(size,size);
+		
+		System.out.println(board);
+		
 		
 	
 
