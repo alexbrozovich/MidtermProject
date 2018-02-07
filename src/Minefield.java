@@ -3,6 +3,19 @@ import java.util.Random;
 public class Minefield {
 	private Cell[][] grid;
 	
+	public void printGrid() {
+		int xDimension = grid.length;
+		int yDimension = grid[0].length;
+		String outGrid = "";
+		for (int i = 0; i < xDimension; i++) {
+			for (int j = 0; j < yDimension; j++) {
+				outGrid += grid[i][j].toString();
+			}
+			outGrid += "\n";
+		}
+		System.out.println(outGrid);
+		
+	}
 	Minefield(int x, int y){
 		//set up up misc stuff
 		Random rand = new Random();
