@@ -47,8 +47,44 @@ public class Cell {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		
+		if (display == false) {
+			return "[]";
+			
+		} else {
+		
+		if (played == true) {
+			return "■";
+		}
+		
+		else if (bomb == true) {
+			return "*";
+		}
+		
+		else if (nearBomb > 0) {
+			return String.valueOf(nearBomb);
+		}
+		
+		else if (nearBomb == 2) {
+			return "2";
+		}
+		
+		else if (nearBomb == 3) {
+			return "3";
+		}
+		
+		else if (nearBomb == 4) {
+			return "4";
+		}
+		
+		else if (flag == true) {
+			return "▶";
+		}
+		
+		
+		
+	
+	} return "X";
 	}
 	
 	
