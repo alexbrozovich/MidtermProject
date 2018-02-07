@@ -12,11 +12,12 @@ public class MidtermProjectMainApp {
 		
 		String name = Validator.getString(scan, "What is your name?\n");
 		
-		String skill = Validator.getString(scan, "What is your skill? Enter: Beginner, Average Joe, or Expert\n");
+		int skill = Validator.getInt(scan, "What is your skill? Enter: (1)Beginner, (2)Average Joe, or Expert\n",1,3);
 		
 		Player p1 = new Player(name,skill);
 		System.out.println("Hey " + p1.getName() + ". Welcome to the game!\n");
-		System.out.println("You say your skill level is " + p1.getSkill() + ". We'll see about that.....");
+		
+		System.out.println("You say your skill level is " + p1.skillSet(skill) + ". We'll see about that.....");
 		
 		
 		int size = Validator.getInt(scan, "First things first, please enter the size of board you would like to play: (Example if you enter 3, your board will be 3x3)\n",3,10);
@@ -25,7 +26,9 @@ public class MidtermProjectMainApp {
 		
 		Minefield board = new Minefield(size,size);
 		
-		System.out.println(board);
+		board.printGrid();
+		
+		
 		
 		
 	
