@@ -10,7 +10,7 @@ public class Cell {
 	
 	private boolean played;
 	private boolean bomb; 
-	private boolean nearBomb;
+	private int nearBomb;
 	private boolean flag;
 	private boolean display;
 	
@@ -27,10 +27,10 @@ public class Cell {
 	public void setBomb(boolean bomb) {
 		this.bomb = bomb;
 	}
-	public boolean isNearBomb() {
+	public int isNearBomb() {
 		return nearBomb;
 	}
-	public void setNearBomb(boolean nearBomb) {
+	public void setNearBomb(int nearBomb) {
 		this.nearBomb = nearBomb;
 	}
 	public boolean isFlag() {

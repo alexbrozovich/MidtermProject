@@ -36,7 +36,7 @@ public class Minefield {
 
 		// c. For loop to get each bomb coordinate and call grid[xarray[i]][yarray[i]].setBomb(true);
 		for(int i = 0; i < numberOfBombs; i++) {
-			grid[bombPlacementListX[i]][bombPlacementListY[i]].setBomb = true;
+			grid[bombPlacementListX[i]][bombPlacementListY[i]].setBomb(true);
 		}
 		
 		// the first two for loops go through each set of coordinates in the grid
@@ -48,7 +48,7 @@ public class Minefield {
 					for (int yRel = (yCoord -1); yRel < (yCoord +2); yRel++) {
 						//make sure it's a valid set of coordinates
 						if (xRel > 0 && xRel < x && yRel > 0 && yRel < y) {
-							if (grid[xRel][yRel].getBomb == true) {
+							if (grid[xRel][yRel].isBomb() == true) {
 								bombCount += 1;
 							}
 							else {
@@ -60,10 +60,10 @@ public class Minefield {
 						}
 					}
 				}
-				if (grid[xCoord][yCoord].getBomb == true) {
+				if (grid[xCoord][yCoord].isBomb() == true) {
 					bombCount = 0;
 				}
-				grid[xCoord][yCoord].setNearHowManyBombs = bombCount;
+				grid[xCoord][yCoord].setNearBomb(bombCount);
 			}
 		}
 		
