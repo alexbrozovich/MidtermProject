@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Minefield {
+	private Cell[][] grid;
 	
 	Minefield(int x, int y){
 		//set up up misc stuff
@@ -65,6 +66,6 @@ public class Minefield {
 				grid[xCoord][yCoord].setNearBomb(bombCount);
 			}
 		}
-		
+		this.grid = grid;
 	}
 }
