@@ -6,6 +6,8 @@ public class MidtermProjectMainApp {
 
 	public static void main(String[] args) {
 		System.out.println("insert minesweeper code here");
+		
+		System.out.println("Hi.");
 
 	}
 
