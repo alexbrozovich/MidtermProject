@@ -41,6 +41,7 @@ public class Player {
 		return "";
 		
 	}
+
 	//@Override
 	public String toString() {		
 		return name + " " + skill;
