@@ -39,23 +39,7 @@ public class Minefield {
 		System.out.println(outGrid);
 
 	}
-<<<<<<< HEAD
 
-	Minefield(int x, int y) {
-		// set up up misc stuff
-		Random rand = new Random();
-		// 1. Make 2D array
-		Cell[][] grid = new Cell[x][y];
-
-		// choose number of bombs to place
-		// we can add this as an argument to the method later instead of hardcoding
-		// or set it based on the size of the array
-		int numberOfBombs = 4;
-
-		// create xarray and yarray objects (these are used to place the bombs later)
-		int[] bombPlacementListX = new int[numberOfBombs];
-		int[] bombPlacementListY = new int[numberOfBombs];
-=======
 	Minefield(int x, int y, int skill, int numOfCells){
 		//set up up misc stuff
 		Random rand = new Random();
@@ -65,13 +49,13 @@ public class Minefield {
 		//choose number of bombs to place
 		//we can add this as an argument to the method later instead of hardcoding
 		//or set it based on the size of the array
-		int numOfBombs = Player.numOfBombs(skill, numOfCells);
+		int numberOfBombs = 4;
 		
 		
 		//create xarray and yarray objects (these are used to place the bombs later)
-		int[] bombPlacementListX = new int[numOfBombs];
-		int[] bombPlacementListY = new int[numOfBombs];
->>>>>>> 95ad18cbc78a8e74012be1a6e9a5cb7bca1b1859
+
+		int[] bombPlacementListX = new int[numberOfBombs];
+		int[] bombPlacementListY = new int[numberOfBombs];
 		// 2. Fill with blank cell objects
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
@@ -84,22 +68,16 @@ public class Minefield {
 
 		// b. Choose random coordinates x,y
 		// b. Add x to x array and y to y array
-<<<<<<< HEAD
-		for (int i = 0; i < numberOfBombs; i++) {
-			bombPlacementListX[i] = (rand.nextInt(x));
-			bombPlacementListY[i] = (rand.nextInt(y));
-		}
 		// c. For loop to get each bomb coordinate and call
 		// grid[xarray[i]][yarray[i]].setBomb(true);
-		for (int i = 0; i < numberOfBombs; i++) {
-=======
-		for(int i = 0; i < numOfBombs; i++) {
+
+		for(int i = 0; i < numberOfBombs; i++) {
 			bombPlacementListX[i] = (rand.nextInt(x));
 			bombPlacementListY[i] = (rand.nextInt(y));
 		}
 		// c. For loop to get each bomb coordinate and call grid[xarray[i]][yarray[i]].setBomb(true);
-		for(int i = 0; i < numOfBombs; i++) {
->>>>>>> 95ad18cbc78a8e74012be1a6e9a5cb7bca1b1859
+
+		for(int i = 0; i < numberOfBombs; i++) {
 			grid[bombPlacementListX[i]][bombPlacementListY[i]].setBomb(true);
 		}
 
