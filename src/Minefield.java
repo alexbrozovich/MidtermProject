@@ -3,6 +3,19 @@ import java.util.Random;
 public class Minefield {
 	private Cell[][] grid;
 	
+	public void clickCell(int x, int y) {
+		if (grid[x][y].isBomb() == true) {
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid.length; j++ ) {
+					grid[i][j].setDisplay(true);
+				}
+			}
+			System.out.println("You hit a mine, game over!");
+		}
+		else {
+			grid[x][y].setDisplay(true);
+		}
+	}
 	public void printGrid() {
 		int xDimension = grid.length;
 		int yDimension = grid[0].length;

@@ -49,7 +49,7 @@ public class Cell {
 	public String toString() {
 		
 		if (display == false) {
-			return "[]";
+			return "▢";
 			
 		} else {
 		
@@ -58,27 +58,27 @@ public class Cell {
 		}
 		
 		else if (bomb == true) {
-			return "*";
+			return "💣";
 		}
 		
 		else if (nearBomb > 0) {
 			return String.valueOf(nearBomb);
 		}
 		
-		else if (nearBomb == 2) {
-			return "2";
-		}
-		
-		else if (nearBomb == 3) {
-			return "3";
-		}
-		
-		else if (nearBomb == 4) {
-			return "4";
-		}
+//		else if (nearBomb == 2) {
+//			return "2";
+//		}
+//		
+//		else if (nearBomb == 3) {
+//			return "3";
+//		}
+//		
+//		else if (nearBomb == 4) {
+//			return "4";
+//		}
 		
 		else if (flag == true) {
-			return "▶";
+			return "⚑";
 		}
 		
 		
