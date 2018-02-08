@@ -42,6 +42,9 @@ public class MidtermProjectMainApp {
 			if(plays == 1) {
 				board.clickCell(userX, userY);
 				board.printGrid();
+			}else {
+				board.addFlag(userX, userY);
+				board.printGrid();
 			}
 			//board.clickCell(userX, userY);
 			
