@@ -32,7 +32,7 @@ public class Player {
 	
 	public String expertise(int num) {
 		if(num == 1) {
-			return "Beginner. This shouldn't be to hard...or will it???";
+			return "Beginner. This shouldn't be too hard...or will it???";
 		}if(num == 2) {
 			return "Average Joe. Average is a good word for you.";
 		}if(num ==3) {
@@ -42,8 +42,6 @@ public class Player {
 			
 	}
 	
-	
-
 	
 
 
