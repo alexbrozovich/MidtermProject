@@ -31,13 +31,19 @@ public class MidtermProjectMainApp {
 		int userX = 0;
 		int userY = 0;
 		while (keepGoing.equalsIgnoreCase("y")) {
-		
+			
 			userX = Validator.getInt(scan, "Enter an x value" , 1, size );
 			userX = userX - 1;
 			userY = Validator.getInt(scan, "Enter an y value" , 1, size );
 			userY = userY - 1;
-			board.clickCell(userX, userY);
-			board.printGrid();
+						
+			System.out.println("Do you want to select cell or place flag?: (1)Cell or (2)Flag");
+			int plays = scan.nextInt();
+			if(plays == 1) {
+				board.clickCell(userX, userY);
+				board.printGrid();
+			}
+			//board.clickCell(userX, userY);
 			
 			
 			if (board.grid[userX][userY].isBomb() == true) {
