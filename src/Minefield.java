@@ -90,7 +90,7 @@ public class Minefield {
 				for (int xRel = (xCoord - 1); xRel < (xCoord + 2); xRel++) {
 					for (int yRel = (yCoord - 1); yRel < (yCoord + 2); yRel++) {
 						// make sure it's a valid set of coordinates
-						if (xRel > 0 && xRel < x && yRel > 0 && yRel < y) {
+						if (xRel > -1 && xRel < x && yRel > -1 && yRel < y) {
 							if (grid[xRel][yRel].isBomb() == true) {
 								bombCount += 1;
 							} else {
@@ -101,9 +101,9 @@ public class Minefield {
 						}
 					}
 				}
-				if (grid[xCoord][yCoord].isBomb() == true) {
-					bombCount = 0;
-				}
+//				if (grid[xCoord][yCoord].isBomb() == true) {
+//					bombCount = 0;
+//				}
 				grid[xCoord][yCoord].setNearBomb(bombCount);
 			}
 		}
