@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Minefield {
-	private Cell[][] grid;
+	public Cell[][] grid;
 
 	public void clickCell(int x, int y) {
 		if (grid[x][y].isBomb() == true) {
@@ -26,7 +26,7 @@ public class Minefield {
 
 				try {
 					if (Integer.valueOf(grid[i][j].toString()) > -1) {
-						outGrid += String.format("%-s", " ");
+						outGrid += "";
 					}
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block

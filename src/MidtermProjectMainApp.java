@@ -39,7 +39,7 @@ public class MidtermProjectMainApp {
 			board.printGrid();
 			
 			
-			if (board.getGrid()[userX][userY].isBomb() == true) {
+			if (board.grid[userX][userY].isBomb() == true) {
 				
 			System.out.println("Would you like to play again? (y/n) "); 
 			keepGoing = scan.next();
