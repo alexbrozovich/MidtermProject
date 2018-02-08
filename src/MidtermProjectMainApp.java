@@ -39,18 +39,21 @@ public class MidtermProjectMainApp {
 						
 			System.out.println("Do you want to select cell or place flag?: (1)Cell or (2)Flag");
 			int plays = scan.nextInt();
+			boolean clickedBomb = false;
 			if(plays == 1) {
 				board.clickCell(userX, userY);
-				board.printGrid();
+//				board.printGrid();
+				if (board.grid[userX][userY].isBomb() == true) {
+					clickedBomb = true;
+				}
 			}else {
 				board.addFlag(userX, userY);
-				board.printGrid();
+//				board.printGrid();
 			}
 			//board.clickCell(userX, userY);
-			
-			
-			if (board.grid[userX][userY].isBomb() == true) {
-				
+			board.printGrid();
+			if (clickedBomb == true || board.winner() == true) {
+			board.printGrid();
 			System.out.println("Would you like to play again? (y/n) "); 
 			keepGoing = scan.next();
 			board = new Minefield(size, size, skill, numOfCells);

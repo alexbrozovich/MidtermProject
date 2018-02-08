@@ -20,6 +20,30 @@ public class Minefield {
 		grid[x][y].setDisplay(true);
 		grid[x][y].setFlag(true);
 	}
+	
+	public boolean winner() {
+		boolean isWinner = true;
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid.length; j++) {
+				if (grid[i][j].isBomb() == true) {
+					if (grid[i][j].isFlag() == true) {
+						continue;
+					} else {
+						isWinner = false;
+					}
+				}
+			}
+		}
+		if (isWinner == true) {
+			System.out.println("Winner winner Chicken Dinner! You have flagged all of the mines");
+			for (int i = 0; i < grid.length; i++) {
+				for (int j = 0; j < grid.length; j++) {
+					grid[i][j].setDisplay(true);
+				}
+			}
+		}
+		return isWinner;
+	}
 	public void printGrid() {
 		int xDimension = grid.length;
 		int yDimension = grid[0].length;
@@ -51,7 +75,7 @@ public class Minefield {
 		//choose number of bombs to place
 		//we can add this as an argument to the method later instead of hardcoding
 		//or set it based on the size of the array
-		int numberOfBombs = 4;
+		int numberOfBombs = Player.numOfBombs(skill, numOfCells);
 		
 		
 		//create xarray and yarray objects (these are used to place the bombs later)
