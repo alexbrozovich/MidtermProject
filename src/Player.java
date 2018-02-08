@@ -30,7 +30,7 @@ public class Player {
 		this.skill = skill;
 	}
 	
-	public String skillSet(int num) {
+	public String expertise(int num) {
 		if(num == 1) {
 			return "Beginner. This shouldn't be to hard...or will it???";
 		}if(num == 2) {
@@ -39,8 +39,13 @@ public class Player {
 			return "Expert...we will see about that.";
 		}
 		return "";
-		
+			
 	}
+	
+	
+
+	
+
 
 
 	//@Override
