@@ -43,7 +43,7 @@ public class MidtermProjectMainApp {
 				
 			System.out.println("Would you like to play again? (y/n) "); 
 			keepGoing = scan.next();
-			
+			board = new Minefield(size, size, skill, numOfCells);
 			}
 		}
 //		board.printGrid();
