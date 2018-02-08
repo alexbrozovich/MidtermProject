@@ -25,8 +25,21 @@ public class MidtermProjectMainApp {
 		System.out.println("Lets play!\n");
 		
 		Minefield board = new Minefield(size,size);
-		
 		board.printGrid();
+		char keepGoing = 'y';
+		int userX = 0;
+		int userY = 0;
+		while (keepGoing == 'y') {
+			System.out.println("Enter an x value");
+			userX = (scan.nextInt() -1);
+			System.out.println("Enter a y value");
+			userY = (scan.nextInt() -1);
+			board.clickCell(userX, userY);
+			board.printGrid();
+		}
+//		board.printGrid();
+//		board.clickCell(1, 1);
+//		board.printGrid();
 		
 		
 		
