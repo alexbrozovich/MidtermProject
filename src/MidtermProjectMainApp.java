@@ -26,22 +26,30 @@ public class MidtermProjectMainApp {
 		
 		Minefield board = new Minefield(size,size);
 		board.printGrid();
-		char keepGoing = 'y';
+		String keepGoing = "y";
 		int userX = 0;
 		int userY = 0;
-		while (keepGoing == 'y') {
+		while (keepGoing.equalsIgnoreCase("y")) {
 			System.out.println("Enter an x value");
 			userX = (scan.nextInt() -1);
 			System.out.println("Enter a y value");
 			userY = (scan.nextInt() -1);
 			board.clickCell(userX, userY);
 			board.printGrid();
+			
+			
+			if (board.getGrid()[userX][userY].isBomb() == true) {
+				
+			System.out.println("Would you like to play again? (y/n) "); 
+			keepGoing = scan.next();
+			
+			}
 		}
 //		board.printGrid();
 //		board.clickCell(1, 1);
 //		board.printGrid();
-		
-		
+			System.out.println("Thanks for playing. Goodbye!");
+//		
 		
 		
 	
