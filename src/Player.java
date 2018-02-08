@@ -41,7 +41,24 @@ public class Player {
 		return "";
 			
 	}
-	
+	public static int numOfBombs(int num, int numberOfCells) {
+		int numOfBombs;
+		
+		if(num == 1) {
+			numOfBombs = (int) (numberOfCells * .05);
+			return numOfBombs; 
+		}
+		if(num == 2) {
+			numOfBombs = (int) (numberOfCells * .1);
+			return numOfBombs;
+		}
+		if(num == 3) {
+			numOfBombs = (int) (numberOfCells * .25);
+			return numOfBombs;
+		}
+		return 0;
+	}
+
 	
 
 

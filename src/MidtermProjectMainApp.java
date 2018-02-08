@@ -21,10 +21,11 @@ public class MidtermProjectMainApp {
 		
 		
 		int size = Validator.getInt(scan, "First things first, please enter the size of board you would like to play: (Example if you enter 3, your board will be 3x3)\n",3,10);
+		int numOfCells = size * size;
 		System.out.println("Your board is " + size + " x " + size + ".\n");
 		System.out.println("Lets play!\n");
 		
-		Minefield board = new Minefield(size,size);
+		Minefield board = new Minefield(size,size,skill,numOfCells);
 		board.printGrid();
 		String keepGoing = "y";
 		int userX = 0;

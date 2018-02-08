@@ -61,7 +61,7 @@ public class Cell {
 			return "💣";
 		}
 		
-		else if (nearBomb > 0) {
+		else if (nearBomb > -1) {
 			return String.valueOf(nearBomb);
 		}
 		
