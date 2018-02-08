@@ -16,6 +16,10 @@ public class Minefield {
 		}
 	}
 
+	public void addFlag(int x, int y) {
+		grid[x][y].setDisplay(true);
+		grid[x][y].setFlag(true);
+	}
 	public void printGrid() {
 		int xDimension = grid.length;
 		int yDimension = grid[0].length;
