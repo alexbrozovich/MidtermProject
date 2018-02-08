@@ -31,10 +31,11 @@ public class MidtermProjectMainApp {
 		int userX = 0;
 		int userY = 0;
 		while (keepGoing.equalsIgnoreCase("y")) {
-			System.out.println("Enter an x value");
-			userX = (scan.nextInt() -1);
-			System.out.println("Enter a y value");
-			userY = (scan.nextInt() -1);
+		
+			userX = Validator.getInt(scan, "Enter an x value" , 1, size );
+			userX = userX - 1;
+			userY = Validator.getInt(scan, "Enter an y value" , 1, size );
+			userY = userY - 1;
 			board.clickCell(userX, userY);
 			board.printGrid();
 			
