@@ -22,11 +22,11 @@ public class Minefield {
 		String outGrid = "";
 		for (int i = 0; i < xDimension; i++) {
 			for (int j = 0; j < yDimension; j++) {
-				outGrid += String.format("%3s", grid[i][j]);
+				outGrid += String.format("%2s", grid[i][j]);
 
 				try {
 					if (Integer.valueOf(grid[i][j].toString()) > -1) {
-						outGrid += "";
+						outGrid += String.format("%1.5s", " ");
 					}
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
