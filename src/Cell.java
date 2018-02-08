@@ -58,7 +58,8 @@ public class Cell {
 		}
 		
 		else if (bomb == true) {
-			return "💣";
+			//char thisChar = ";
+			return "💣" + " ";
 		}
 		
 		else if (nearBomb > -1) {

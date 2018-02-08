@@ -16,17 +16,20 @@ public class Minefield {
 		}
 	}
 
+	public void addFlag(int x, int y) {
+		grid[x][y].setDisplay(true);
+		grid[x][y].setFlag(true);
+	}
 	public void printGrid() {
 		int xDimension = grid.length;
 		int yDimension = grid[0].length;
 		String outGrid = "";
 		for (int i = 0; i < xDimension; i++) {
 			for (int j = 0; j < yDimension; j++) {
-				outGrid += String.format("%2s", grid[i][j]);
-
+				outGrid += String.format("%-5s", grid[i][j]);
 				try {
 					if (Integer.valueOf(grid[i][j].toString()) > -1) {
-						outGrid += String.format("%1.5s", " ");
+						outGrid += "\u2002";
 					}
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
@@ -37,7 +40,6 @@ public class Minefield {
 			outGrid += "\n";
 		}
 		System.out.println(outGrid);
-
 	}
 
 	Minefield(int x, int y, int skill, int numOfCells){
