@@ -57,14 +57,16 @@ public class Cell {
 			return "■";
 		}
 		
+		else if (flag == true) {
+			return "⚑";
+		}
+		
 		else if (bomb == true) {
 			//char thisChar = ";
 			return "💣" + " ";
 		}
 		
-		else if (flag == true) {
-			return "⚑";
-		}
+
 		
 		else if (nearBomb > -1) {
 			return String.valueOf(nearBomb);
