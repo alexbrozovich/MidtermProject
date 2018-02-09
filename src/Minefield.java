@@ -75,10 +75,9 @@ public class Minefield {
 		Cell[][] grid = new Cell[x][y];
 		
 		//choose number of bombs to place based on skill level and number of cells.
-
 		int numberOfBombs = Player.numOfBombs(skill, numOfCells);
-		int numberOfFlags = Player.numOfFlags(skill, numOfCells);
-		
+		this.numberOfFlags = Player.numOfFlags(skill, numOfCells);
+		this.numberOfBombs = numberOfBombs;
 		//create xarray and yarray objects (these are used to place the bombs later)
 
 		int[] bombPlacementListX = new int[numberOfBombs];

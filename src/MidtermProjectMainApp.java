@@ -30,7 +30,7 @@ public class MidtermProjectMainApp {
 		String keepGoing = "y";
 		int userX = 0;
 		int userY = 0;
-		
+		int flagCounter = board.numberOfBombs;
 		while (keepGoing.equalsIgnoreCase("y")) {
 			
 			userX = Validator.getInt(scan, "Enter an x value" , 1, size );
@@ -49,12 +49,12 @@ public class MidtermProjectMainApp {
 					clickedBomb = true;
 				}
 			}else {
-				int flagCounter = board.numberOfBombs;
+				
 				
 //				board.printGrid();
-				if(board.numberOfFlags == board.numberOfBombs) {
+				if (flagCounter > 0) {
 				board.addFlag(userX, userY);
-				flagCounter++;	
+				flagCounter--;	
 				System.out.println(flagCounter + " left");
 				}		
 				else {
@@ -68,6 +68,7 @@ public class MidtermProjectMainApp {
 			System.out.println("Would you like to play again? (y/n) "); 
 			keepGoing = scan.next();
 			board = new Minefield(size, size, skill, numOfCells);
+			flagCounter = board.numberOfBombs;
 			}
 		}
 //		board.printGrid();
