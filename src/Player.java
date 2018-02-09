@@ -45,15 +45,15 @@ public class Player {
 		int numOfBombs;
 		
 		if(num == 1) {
-			numOfBombs = (int) (numberOfCells * .05);
+			numOfBombs = (int) (numberOfCells * .25);
 			return numOfBombs; 
 		}
 		if(num == 2) {
-			numOfBombs = (int) (numberOfCells * .1);
+			numOfBombs = (int) (numberOfCells * .35);
 			return numOfBombs;
 		}
 		if(num == 3) {
-			numOfBombs = (int) (numberOfCells * .25);
+			numOfBombs = (int) (numberOfCells * .45);
 			return numOfBombs;
 		}
 		return 0;
