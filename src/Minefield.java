@@ -1,7 +1,9 @@
 import java.util.Random;
 
 public class Minefield {
+	public int numberOfBombs;
 	public Cell[][] grid;
+	public int numberOfFlags;
 
 	public void clickCell(int x, int y) {
 		if (grid[x][y].isBomb() == true) {
@@ -26,7 +28,7 @@ public class Minefield {
 		for (int i = 0; i < grid.length; i++) {
 			for (int j = 0; j < grid.length; j++) {
 				if (grid[i][j].isBomb() == true) {
-					if (grid[i][j].isFlag() == true) {
+					if (grid[i][j].isFlag() == true && (numberOfFlags == numberOfBombs)) {
 						continue;
 					} else {
 						isWinner = false;
@@ -72,11 +74,10 @@ public class Minefield {
 		// 1. Make 2D array
 		Cell[][] grid = new Cell[x][y];
 		
-		//choose number of bombs to place
-		//we can add this as an argument to the method later instead of hardcoding
-		//or set it based on the size of the array
+		//choose number of bombs to place based on skill level and number of cells.
+
 		int numberOfBombs = Player.numOfBombs(skill, numOfCells);
-		
+		int numberOfFlags = Player.numOfFlags(skill, numOfCells);
 		
 		//create xarray and yarray objects (these are used to place the bombs later)
 

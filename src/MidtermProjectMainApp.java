@@ -30,6 +30,7 @@ public class MidtermProjectMainApp {
 		String keepGoing = "y";
 		int userX = 0;
 		int userY = 0;
+		
 		while (keepGoing.equalsIgnoreCase("y")) {
 			
 			userX = Validator.getInt(scan, "Enter an x value" , 1, size );
@@ -47,8 +48,17 @@ public class MidtermProjectMainApp {
 					clickedBomb = true;
 				}
 			}else {
-				board.addFlag(userX, userY);
+				int flagCounter = board.numberOfBombs;
+				
 //				board.printGrid();
+				if(board.numberOfFlags == board.numberOfBombs) {
+				board.addFlag(userX, userY);
+				flagCounter++;	
+				System.out.println(flagCounter + " left");
+				}		
+				else {
+					System.out.println("You have used up all of your flags!");
+				}
 			}
 			//board.clickCell(userX, userY);
 			board.printGrid();
