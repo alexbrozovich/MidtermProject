@@ -38,8 +38,9 @@ public class MidtermProjectMainApp {
 			userY = Validator.getInt(scan, "Enter an y value" , 1, size );
 			userY = userY - 1;
 						
-			System.out.println("Do you want to select cell or place flag?: (1)Cell or (2)Flag");
-			int plays = scan.nextInt();
+			
+			
+			int plays = Validator.getInt(scan, "Do you want to select cell or place flag?: (1)Cell or (2)Flag", 1, 2);
 			boolean clickedBomb = false;
 			if(plays == 1) {
 				board.clickCell(userX, userY);
