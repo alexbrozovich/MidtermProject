@@ -59,6 +59,23 @@ public class Player {
 		return 0;
 	}
 
+	public static int numOfFlags(int num, int numberOfCells) {
+		int numOfFlags;
+		
+		if(num == 1) {
+			numOfFlags = (int) (numberOfCells * .25);
+			return numOfFlags; 
+		}
+		if(num == 2) {
+			numOfFlags = (int) (numberOfCells * .35);
+			return numOfFlags;
+		}
+		if(num == 3) {
+			numOfFlags = (int) (numberOfCells * .45);
+			return numOfFlags;
+		}
+		return 0;
+	}
 	
 
 
@@ -67,6 +84,7 @@ public class Player {
 	public String toString() {		
 		return name + " " + skill;
 	}
+
 	
 
 }
