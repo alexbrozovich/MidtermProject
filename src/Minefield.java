@@ -26,6 +26,11 @@ public class Minefield {
 		grid[x][y].setFlag(true);
 	}
 	
+	//removes a flag from a given cell
+	public void removeFlag(int x, int y) {
+		grid[x][y].setFlag(false);
+	}
+	
 	//determines whether or not the player has won the game or not
 	public boolean winner() {
 		boolean isWinner = true;
