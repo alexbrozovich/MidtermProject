@@ -1,13 +1,7 @@
-/**
- * 
- */
 
-/**
- * @author jordan
- *
- */
 public class Cell {
-	
+	//creating our instances to what will be placed in our individual cells.
+	//
 	private boolean played;
 	private boolean bomb; 
 	private int nearBomb;
@@ -47,7 +41,7 @@ public class Cell {
 	}
 	@Override
 	public String toString() {
-		
+	//to string placed in order to print out our characters in our cells.	
 		if (display == false) {
 			return "▢";
 			
@@ -62,27 +56,15 @@ public class Cell {
 		}
 		
 		else if (bomb == true) {
-			//char thisChar = ";
 			return "💣" + " ";
 		}
 		
 
-		
+		//in order to work with numbers 0-3 we are using the -1 value to set our indexes 
 		else if (nearBomb > -1) {
 			return String.valueOf(nearBomb);
 		}
-		
-//		else if (nearBomb == 2) {
-//			return "2";
-//		}
-//		
-//		else if (nearBomb == 3) {
-//			return "3";
-//		}
-//		
-//		else if (nearBomb == 4) {
-//			return "4";
-//		}
+
 		
 
 		
