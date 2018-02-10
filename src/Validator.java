@@ -1,11 +1,4 @@
-/**
- * 
- */
 
-/**
- * @author jordan
- *
- */
 	import java.util.Scanner;
 
 	//you can add your own validation methods if needed
