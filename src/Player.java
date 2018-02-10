@@ -29,6 +29,7 @@ public class Player {
 	public void setSkill(int skill) {
 		this.skill = skill;
 	}
+	//method used when the user selects either beginner, average joe, or expert it will print a different message
 	
 	public String expertise(int num) {
 		if(num == 1) {
@@ -41,6 +42,9 @@ public class Player {
 		return "";
 			
 	}
+	//method used with the user selects his/her skill level and selects the board they want to play
+	//it will return the number of bombs used for each size and each skill level
+	//this allows the user for a complete custom experience
 	public static int numOfBombs(int num, int numberOfCells) {
 		int numOfBombs;
 		
@@ -58,7 +62,9 @@ public class Player {
 		}
 		return 0;
 	}
-
+//method used here to match the number of flags with the numbers of bombs placed which is why the formulas match
+//used to create clarity of calling methods and eliminate confusion
+//in the game minesweeper you can only have the same amount of flags as bombs
 	public static int numOfFlags(int num, int numberOfCells) {
 		int numOfFlags;
 		
@@ -79,7 +85,7 @@ public class Player {
 	
 
 
-
+//to string used to print name and skill
 	//@Override
 	public String toString() {		
 		return name + " " + skill;
