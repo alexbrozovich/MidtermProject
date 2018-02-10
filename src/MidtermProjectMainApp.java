@@ -51,6 +51,7 @@ public class MidtermProjectMainApp {
 			} else {
 				//if there isn't a flag, place a flag
 				//if there is a flag already there, take it away
+				//you start with a set number of flags and count down until you have none left
 				if (board.grid[userX][userY].isFlag() == false) {
 					if (flagCounter > 0) {
 						board.addFlag(userX, userY);
