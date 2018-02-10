@@ -104,6 +104,16 @@ public class Minefield {
 		// c. For loop to get each bomb coordinate and call grid[xarray[i]][yarray[i]].setBomb(true);
 
 		for(int i = 0; i < numberOfBombs; i++) {
+			boolean noDupes = false;
+			while (noDupes == false) {
+				if (grid[bombPlacementListX[i]][bombPlacementListY[i]].isBomb() == true) {
+					bombPlacementListX[i] = rand.nextInt(x);
+					bombPlacementListY[i] = rand.nextInt(x);
+				}
+				else {
+					noDupes = true;
+				}
+			}
 			grid[bombPlacementListX[i]][bombPlacementListY[i]].setBomb(true);
 		}
 
