@@ -1,7 +1,7 @@
 
 public class Cell {
 	//creating our instances to what will be placed in our individual cells.
-	//
+	
 	private boolean played;
 	private boolean bomb; 
 	private int nearBomb;

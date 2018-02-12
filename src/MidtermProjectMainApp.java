@@ -40,7 +40,9 @@ public class MidtermProjectMainApp {
 			userY = Validator.getInt(scan, "Enter an y value", 1, size);
 			userY = userY - 1;
 
-			int plays = Validator.getInt(scan, "Do you want to select cell or place flag?: (1)Cell or (2)Flag", 1, 2);
+			
+			// Validator placed so user must pick an option between 1 and 2
+			int plays = Validator.getInt(scan, "Do you want to select cell or place/remove flag?: (1)Cell or (2)Flag", 1, 2);
 			boolean clickedBomb = false;
 			if (plays == 1) {
 				board.clickCell(userX, userY);
@@ -70,7 +72,6 @@ public class MidtermProjectMainApp {
 			// board.clickCell(userX, userY);
 			board.printGrid();
 			if (clickedBomb == true || board.winner() == true) {
-				board.printGrid();
 				System.out.println("Would you like to play again? (y/n) ");
 				keepGoing = scan.next();
 				board = new Minefield(size, size, skill, numOfCells);

@@ -27,8 +27,10 @@ public class Minefield {
 	}
 	
 	//removes a flag from a given cell
+	//allows removal of flag without showing what's behind the cell
 	public void removeFlag(int x, int y) {
 		grid[x][y].setFlag(false);
+		grid[x][y].setDisplay(false);
 	}
 	
 	//determines whether or not the player has won the game or not
@@ -46,7 +48,7 @@ public class Minefield {
 			}
 		}
 		if (isWinner == true) {
-			System.out.println("Winner winner Chicken Dinner! You have flagged all of the mines");
+			System.out.println("Winner winner chicken dinner! You have flagged all of the mines!");
 			for (int i = 0; i < grid.length; i++) {
 				for (int j = 0; j < grid.length; j++) {
 					grid[i][j].setDisplay(true);
